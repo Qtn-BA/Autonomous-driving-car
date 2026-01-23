@@ -85,8 +85,7 @@ The objective is to demonstrate how a reinforcement learning agent can learn **c
 
 ## 📷 Demo
 
-## 📷 Demo
+![Autonomous Driving Demo](images/Gif_Autonomnous_Car.gif)
 
-![Gif_Autonomnous_Car](images/demo.gif)
 
 
