@@ -1,45 +1,89 @@
-🚘 Project Overview
-This project simulates an autonomous vehicle that learns to drive by itself using Deep Reinforcement Learning (DRL).
+# 🚘 Autonomous Driving with Deep Reinforcement Learning
 
-Built from scratch with a custom Pygame environment, the AI agent must navigate a road, manage its speed, and interact with traffic elements without any pre-programmed rules. It learns solely through trial and error, getting rewarded for safe driving and penalized for mistakes.
+This project simulates an **autonomous vehicle** that learns how to drive using **Deep Reinforcement Learning (DRL)**.  
+The environment is built **from scratch** using **Pygame**, and the agent learns entirely through **trial and error**, without any hard-coded driving rules.
 
-✨ Key Features
+The goal is to navigate a road safely while managing speed, lanes, obstacles, and traffic lights.
+
+---
+
+## ✨ Key Features
+
 The autonomous agent is trained to handle several real-world driving scenarios:
 
+- **Obstacle Avoidance**  
+  Detects and avoids other vehicles on the road.
 
-Obstacle Avoidance: Detecting and dodging other vehicles on the road.
+- **Traffic Regulation**  
+  Recognizes traffic lights and stops at red lights.
 
+- **Lane Keeping**  
+  Maintains a safe lateral position within the lane.
 
-Traffic Regulation: Recognizing and stopping at red lights.
+- **Speed Control**  
+  Adjusts acceleration and braking based on the driving context.
 
+---
 
-Lane Keeping: Maintaining a safe lateral position on the road.
+## 🤖 How It Works
 
+The system is based on a **Double Deep Q-Network (Double DQN)** algorithm.
 
-Speed Control: Managing acceleration and braking based on the context.
+### High-Level Training Loop
 
-🤖 How It Works
-The system uses an algorithm called Double Deep Q-Network (Double DQN). Here is the high-level loop:
+1. **Perception**  
+   The vehicle uses simulated sensors to observe its environment:
+   - Distance to obstacles
+   - Current speed
+   - Traffic light status
+   - Lane position
 
+2. **Decision**  
+   A neural network processes the state information and selects an action:
+   - Steer left / right
+   - Accelerate
+   - Brake
 
-Perception: The car uses "sensors" to see its environment (distance to obstacles, current speed, traffic light status).
+3. **Learning**
+   - Safe driving → **positive reward**
+   - Collision or running a red light → **negative penalty**
 
+Over time, the agent updates its policy to **maximize cumulative rewards** and **minimize dangerous behavior**.
 
-Decision: A Neural Network processes this information and chooses the best action (steer left/right, accelerate, or brake).
+---
 
-Learning:
+## 🧠 Reinforcement Learning Algorithm
 
-If the car drives safely, it receives a positive reward.
+- **Double Deep Q-Network (Double DQN)**
+  - Reduces overestimation bias found in standard DQN
+  - Uses a target network for more stable learning
 
-If it crashes or runs a red light, it receives a negative penalty.
+---
 
-Over time, the AI updates its strategy to maximize rewards and minimize accidents.
+## 🛠️ Built With
 
-🛠️ Built With
-Python: Core logic.
+- **Python** – Core logic and training loop  
+- **Pygame** – Simulation environment, rendering, and physics  
+- **PyTorch** – Neural network and Double DQN implementation  
 
+---
 
-Pygame: Rendering the simulation and handling physics.
+## 📌 Project Goal
 
+The objective is to demonstrate how a reinforcement learning agent can learn **complex driving behaviors** in a custom environment using only rewards and penalties—without predefined rules or heuristics.
 
-PyTorch: Implementation of the Neural Network and Double DQN algorithm.
+---
+
+## 🚀 Future Improvements (Optional)
+
+- Add more complex road layouts
+- Introduce pedestrian agents
+- Implement continuous control (DDPG / PPO)
+- Improve sensor realism
+
+---
+
+## 📷 Demo
+
+*(Add screenshots or a GIF of the simulation here)*
+
