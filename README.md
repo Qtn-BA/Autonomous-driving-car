@@ -82,8 +82,3 @@ The objective is to demonstrate how a reinforcement learning agent can learn **c
 - Improve sensor realism
 
 ---
-
-## 📷 Demo
-
-*(Add screenshots or a GIF of the simulation here)*
-
